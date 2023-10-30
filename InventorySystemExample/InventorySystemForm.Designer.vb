@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class InventorySystemForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RecordGroupBox = New System.Windows.Forms.GroupBox()
+        Me.components = New System.ComponentModel.Container()
+        Me.RecordInfoGroupBox = New System.Windows.Forms.GroupBox()
         Me.DataSheetLabel = New System.Windows.Forms.Label()
         Me.ManufactureLabel = New System.Windows.Forms.Label()
         Me.ManufactureTextBox = New System.Windows.Forms.TextBox()
@@ -46,31 +47,32 @@ Partial Class Form1
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
-        Me.RecordGroupBox.SuspendLayout()
+        Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.RecordInfoGroupBox.SuspendLayout()
         Me.OptionsGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'RecordGroupBox
+        'RecordInfoGroupBox
         '
-        Me.RecordGroupBox.Controls.Add(Me.DataSheetLabel)
-        Me.RecordGroupBox.Controls.Add(Me.ManufactureLabel)
-        Me.RecordGroupBox.Controls.Add(Me.ManufactureTextBox)
-        Me.RecordGroupBox.Controls.Add(Me.DataSheetTextBox)
-        Me.RecordGroupBox.Controls.Add(Me.VenderLabel)
-        Me.RecordGroupBox.Controls.Add(Me.LocationLabel)
-        Me.RecordGroupBox.Controls.Add(Me.PartNumberLabel)
-        Me.RecordGroupBox.Controls.Add(Me.DescriptionLabel)
-        Me.RecordGroupBox.Controls.Add(Me.PartNumberTextBox)
-        Me.RecordGroupBox.Controls.Add(Me.LocationTextBox)
-        Me.RecordGroupBox.Controls.Add(Me.VendorTextBox)
-        Me.RecordGroupBox.Controls.Add(Me.DescriptionTextBox)
-        Me.RecordGroupBox.Location = New System.Drawing.Point(88, 53)
-        Me.RecordGroupBox.Name = "RecordGroupBox"
-        Me.RecordGroupBox.Size = New System.Drawing.Size(319, 254)
-        Me.RecordGroupBox.TabIndex = 4
-        Me.RecordGroupBox.TabStop = False
-        Me.RecordGroupBox.Text = "Record"
+        Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.ManufactureLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.ManufactureTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.VenderLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.LocationLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.LocationTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.VendorTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionTextBox)
+        Me.RecordInfoGroupBox.Location = New System.Drawing.Point(88, 53)
+        Me.RecordInfoGroupBox.Name = "RecordInfoGroupBox"
+        Me.RecordInfoGroupBox.Size = New System.Drawing.Size(319, 254)
+        Me.RecordInfoGroupBox.TabIndex = 0
+        Me.RecordInfoGroupBox.TabStop = False
+        Me.RecordInfoGroupBox.Text = "Record Info"
         '
         'DataSheetLabel
         '
@@ -95,14 +97,14 @@ Partial Class Form1
         Me.ManufactureTextBox.Location = New System.Drawing.Point(95, 139)
         Me.ManufactureTextBox.Name = "ManufactureTextBox"
         Me.ManufactureTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.ManufactureTextBox.TabIndex = 8
+        Me.ManufactureTextBox.TabIndex = 4
         '
         'DataSheetTextBox
         '
         Me.DataSheetTextBox.Location = New System.Drawing.Point(95, 167)
         Me.DataSheetTextBox.Name = "DataSheetTextBox"
         Me.DataSheetTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.DataSheetTextBox.TabIndex = 9
+        Me.DataSheetTextBox.TabIndex = 5
         '
         'VenderLabel
         '
@@ -179,7 +181,7 @@ Partial Class Form1
         Me.OptionsGroupBox.Location = New System.Drawing.Point(413, 46)
         Me.OptionsGroupBox.Name = "OptionsGroupBox"
         Me.OptionsGroupBox.Size = New System.Drawing.Size(243, 224)
-        Me.OptionsGroupBox.TabIndex = 5
+        Me.OptionsGroupBox.TabIndex = 1
         Me.OptionsGroupBox.TabStop = False
         Me.OptionsGroupBox.Text = "Options"
         '
@@ -189,7 +191,7 @@ Partial Class Form1
         Me.RadioButton6.Location = New System.Drawing.Point(62, 184)
         Me.RadioButton6.Name = "RadioButton6"
         Me.RadioButton6.Size = New System.Drawing.Size(115, 21)
-        Me.RadioButton6.TabIndex = 12
+        Me.RadioButton6.TabIndex = 5
         Me.RadioButton6.TabStop = True
         Me.RadioButton6.Text = "RadioButton6"
         Me.RadioButton6.UseVisualStyleBackColor = True
@@ -200,7 +202,7 @@ Partial Class Form1
         Me.RadioButton5.Location = New System.Drawing.Point(62, 157)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(115, 21)
-        Me.RadioButton5.TabIndex = 11
+        Me.RadioButton5.TabIndex = 4
         Me.RadioButton5.TabStop = True
         Me.RadioButton5.Text = "RadioButton5"
         Me.RadioButton5.UseVisualStyleBackColor = True
@@ -211,7 +213,7 @@ Partial Class Form1
         Me.CheckBox3.Location = New System.Drawing.Point(77, 77)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(100, 21)
-        Me.CheckBox3.TabIndex = 9
+        Me.CheckBox3.TabIndex = 2
         Me.CheckBox3.Text = "CheckBox3"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
@@ -221,7 +223,7 @@ Partial Class Form1
         Me.CheckBox2.Location = New System.Drawing.Point(77, 50)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(100, 21)
-        Me.CheckBox2.TabIndex = 8
+        Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = "CheckBox2"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -231,7 +233,7 @@ Partial Class Form1
         Me.CheckBox1.Location = New System.Drawing.Point(77, 23)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(100, 21)
-        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "CheckBox1"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -241,7 +243,7 @@ Partial Class Form1
         Me.RadioButton4.Location = New System.Drawing.Point(62, 130)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(115, 21)
-        Me.RadioButton4.TabIndex = 10
+        Me.RadioButton4.TabIndex = 3
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "RadioButton4"
         Me.RadioButton4.UseVisualStyleBackColor = True
@@ -254,7 +256,7 @@ Partial Class Form1
         Me.ButtonGroupBox.Location = New System.Drawing.Point(148, 305)
         Me.ButtonGroupBox.Name = "ButtonGroupBox"
         Me.ButtonGroupBox.Size = New System.Drawing.Size(463, 89)
-        Me.ButtonGroupBox.TabIndex = 6
+        Me.ButtonGroupBox.TabIndex = 2
         Me.ButtonGroupBox.TabStop = False
         '
         'UpdateButton
@@ -262,7 +264,7 @@ Partial Class Form1
         Me.UpdateButton.Location = New System.Drawing.Point(6, 21)
         Me.UpdateButton.Name = "UpdateButton"
         Me.UpdateButton.Size = New System.Drawing.Size(144, 57)
-        Me.UpdateButton.TabIndex = 13
+        Me.UpdateButton.TabIndex = 0
         Me.UpdateButton.Text = "&Update"
         Me.UpdateButton.UseVisualStyleBackColor = True
         '
@@ -271,8 +273,9 @@ Partial Class Form1
         Me.ClearButton.Location = New System.Drawing.Point(156, 21)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(144, 57)
-        Me.ClearButton.TabIndex = 14
+        Me.ClearButton.TabIndex = 1
         Me.ClearButton.Text = "&Clear"
+        Me.MainToolTip.SetToolTip(Me.ClearButton, "Press This Button to Clear Entered Data")
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -280,22 +283,26 @@ Partial Class Form1
         Me.ExitButton.Location = New System.Drawing.Point(307, 21)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(144, 57)
-        Me.ExitButton.TabIndex = 15
+        Me.ExitButton.TabIndex = 2
         Me.ExitButton.Text = "&Exit"
+        Me.MainToolTip.SetToolTip(Me.ExitButton, "Press This Button to Quit")
         Me.ExitButton.UseVisualStyleBackColor = True
         '
-        'Form1
+        'InventorySystemForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.RecordGroupBox)
+        Me.Controls.Add(Me.RecordInfoGroupBox)
         Me.Controls.Add(Me.OptionsGroupBox)
         Me.Controls.Add(Me.ButtonGroupBox)
-        Me.Name = "Form1"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Name = "InventorySystemForm"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventory Manager"
-        Me.RecordGroupBox.ResumeLayout(False)
-        Me.RecordGroupBox.PerformLayout()
+        Me.RecordInfoGroupBox.ResumeLayout(False)
+        Me.RecordInfoGroupBox.PerformLayout()
         Me.OptionsGroupBox.ResumeLayout(False)
         Me.OptionsGroupBox.PerformLayout()
         Me.ButtonGroupBox.ResumeLayout(False)
@@ -303,7 +310,7 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents RecordGroupBox As GroupBox
+    Friend WithEvents RecordInfoGroupBox As GroupBox
     Friend WithEvents DataSheetLabel As Label
     Friend WithEvents ManufactureLabel As Label
     Friend WithEvents ManufactureTextBox As TextBox
@@ -327,4 +334,5 @@ Partial Class Form1
     Friend WithEvents UpdateButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents ExitButton As Button
+    Friend WithEvents MainToolTip As ToolTip
 End Class
