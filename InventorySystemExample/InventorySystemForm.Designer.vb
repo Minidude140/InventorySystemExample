@@ -48,6 +48,7 @@ Partial Class InventorySystemForm
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.RecordInfoGroupBox.SuspendLayout()
         Me.OptionsGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
@@ -288,6 +289,10 @@ Partial Class InventorySystemForm
         Me.MainToolTip.SetToolTip(Me.ExitButton, "Press This Button to Quit")
         Me.ExitButton.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog
+        '
+        Me.OpenFileDialog.FileName = "OpenFileDialog1"
+        '
         'InventorySystemForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -335,4 +340,5 @@ Partial Class InventorySystemForm
     Friend WithEvents ClearButton As Button
     Friend WithEvents ExitButton As Button
     Friend WithEvents MainToolTip As ToolTip
+    Friend WithEvents OpenFileDialog As OpenFileDialog
 End Class
