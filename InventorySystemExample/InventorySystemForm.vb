@@ -10,7 +10,15 @@
         Try
             FileOpen(fileNumber, fileName, OpenMode.Input)
         Catch ioException As IO.IOException
-            OpenFileDialog.ShowDialog()
+            With OpenFileDialog
+                .Reset()
+                .InitialDirectory = "..\"
+                .FileName = ""
+                .DefaultExt = ".txt"
+                .AddExtension = True
+                .Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+                .ShowDialog()
+            End With
         Catch ex As Exception
 
         End Try
