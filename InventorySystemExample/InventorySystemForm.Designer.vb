@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class InventorySystemForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,12 @@ Partial Class InventorySystemForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.RecordInfoGroupBox = New System.Windows.Forms.GroupBox()
+        Me.DescriptionLabel = New System.Windows.Forms.Label()
+        Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
         Me.DataSheetLabel = New System.Windows.Forms.Label()
         Me.ManufactureLabel = New System.Windows.Forms.Label()
         Me.ManufactureTextBox = New System.Windows.Forms.TextBox()
@@ -31,11 +33,9 @@ Partial Class InventorySystemForm
         Me.VenderLabel = New System.Windows.Forms.Label()
         Me.LocationLabel = New System.Windows.Forms.Label()
         Me.PartNumberLabel = New System.Windows.Forms.Label()
-        Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.PartNumberTextBox = New System.Windows.Forms.TextBox()
         Me.LocationTextBox = New System.Windows.Forms.TextBox()
         Me.VendorTextBox = New System.Windows.Forms.TextBox()
-        Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
         Me.OptionsGroupBox = New System.Windows.Forms.GroupBox()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
@@ -56,18 +56,18 @@ Partial Class InventorySystemForm
         '
         'RecordInfoGroupBox
         '
-        Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.LocationLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.LocationTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.VenderLabel)
+        Me.RecordInfoGroupBox.Controls.Add(Me.VendorTextBox)
         Me.RecordInfoGroupBox.Controls.Add(Me.ManufactureLabel)
         Me.RecordInfoGroupBox.Controls.Add(Me.ManufactureTextBox)
+        Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetLabel)
         Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetTextBox)
-        Me.RecordInfoGroupBox.Controls.Add(Me.VenderLabel)
-        Me.RecordInfoGroupBox.Controls.Add(Me.LocationLabel)
-        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberLabel)
-        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionLabel)
-        Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberTextBox)
-        Me.RecordInfoGroupBox.Controls.Add(Me.LocationTextBox)
-        Me.RecordInfoGroupBox.Controls.Add(Me.VendorTextBox)
-        Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionTextBox)
         Me.RecordInfoGroupBox.Location = New System.Drawing.Point(88, 53)
         Me.RecordInfoGroupBox.Name = "RecordInfoGroupBox"
         Me.RecordInfoGroupBox.Size = New System.Drawing.Size(319, 254)
@@ -318,16 +318,16 @@ Partial Class InventorySystemForm
     Friend WithEvents RecordInfoGroupBox As GroupBox
     Friend WithEvents DataSheetLabel As Label
     Friend WithEvents ManufactureLabel As Label
+    Friend WithEvents DescriptionTextBox As TextBox
+    Friend WithEvents PartNumberTextBox As TextBox
+    Friend WithEvents LocationTextBox As TextBox
+    Friend WithEvents VendorTextBox As TextBox
     Friend WithEvents ManufactureTextBox As TextBox
     Friend WithEvents DataSheetTextBox As TextBox
     Friend WithEvents VenderLabel As Label
     Friend WithEvents LocationLabel As Label
     Friend WithEvents PartNumberLabel As Label
     Friend WithEvents DescriptionLabel As Label
-    Friend WithEvents PartNumberTextBox As TextBox
-    Friend WithEvents LocationTextBox As TextBox
-    Friend WithEvents VendorTextBox As TextBox
-    Friend WithEvents DescriptionTextBox As TextBox
     Friend WithEvents OptionsGroupBox As GroupBox
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents RadioButton5 As RadioButton

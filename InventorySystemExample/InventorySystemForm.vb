@@ -1,4 +1,12 @@
-﻿Public Class InventorySystemForm
+﻿''TODO
+'[]Fix File IO
+'[]Create parts inventory file
+'[]make validation for other controls
+'[]add part
+'[]Remove part
+
+
+Public Class InventorySystemForm
     'Custom Methods
     Sub SetDefaults()
 
@@ -28,50 +36,22 @@
     ''' Checks that all text fields are filled in
     ''' </summary>
     ''' <returns></returns>
-    Function ValidateUserInputs() As Boolean
+    Private Function ValidateUserInputs(Optional ByRef errormessage As String = "") As Boolean
         Dim isValid As Boolean = True
         Dim errrorMessage As String
-        'If DataSheetTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("DataSheet is required")
-        '    DataSheetTextBox.Focus()
-        'End If
-        'If ManufactureTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("Manufacture is required")
-        '    ManufactureTextBox.Focus()
-        'End If
-        'If VendorTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("Vendor is required")
-        '    VendorTextBox.Focus()
-        'End If
-        'If LocationTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("Location is required")
-        '    LocationTextBox.Focus()
-        'End If
-        'If PartNumberTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("Part Number is required")
-        '    PartNumberTextBox.Focus()
-        'End If
-        'If DescriptionTextBox.Text = "" Then
-        '    isValid = False
-        '    MsgBox("Description is required")
-        '    DescriptionTextBox.Focus()
-        'End If
 
-        For Each Thingy As TextBox In RecordInfoGroupBox.Controls.OfType(Of TextBox)
+
+        For Each Item As TextBox In RecordInfoGroupBox.Controls.OfType(Of TextBox)
             If isValid = True Then
-                Thingy.Focus()
+                Item.Focus()
             End If
-            If Thingy.Text = "" Then
+            If Item.Text = "" Then
                 isValid = False
-                errrorMessage &= $"{Thingy.Name.ToString} is required{vbCrLf}"
+                errrorMessage &= Replace($"{Item.Name.ToString} is required{vbCrLf}", "TextBox", "")
             End If
         Next
-        MsgBox(errrorMessage)
+
+        'MsgBox(errrorMessage)
         Return isValid
     End Function
 
