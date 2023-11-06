@@ -7,25 +7,42 @@
 
 
 Public Class InventorySystemForm
+
+    Private inventoryItems As New List(Of String)
+    Private fileName As String = "..\..\partsInventory.txt"
+
     'Custom Methods
     Sub SetDefaults()
 
     End Sub
 
     Private Sub LoadInventoryFile()
-        Dim fileName As String = "partsInventory.txt"
+        'Dim fileName As String = "..\..\partsInventory.txt"
         Dim fileNumber As Integer = FreeFile()
+        Dim currentField As String = ""
+        Dim currentRecord As String = ""
         Try
-            FileOpen(fileNumber, fileName, OpenMode.Input)
+            FileOpen(fileNumber, Me.fileName, OpenMode.Input)
+            Do Until EOF(fileNumber)
+                For i = 0 To 6
+                    Input(fileNumber, currentField)
+                    currentRecord &= currentField & ", "
+                Next
+                Me.inventoryItems.Add(currentRecord)
+                currentRecord = ""
+            Loop
+
         Catch ioException As IO.IOException
             With OpenFileDialog
                 .Reset()
-                .InitialDirectory = "..\"
+                .InitialDirectory = "..\..\"
                 .FileName = ""
                 .DefaultExt = ".txt"
                 .AddExtension = True
                 .Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
                 .ShowDialog()
+                'TODO check if user clicks ok or cancel
+                Me.fileName = fileName
             End With
         Catch ex As Exception
 
@@ -67,6 +84,12 @@ Public Class InventorySystemForm
     End Sub
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        ValidateUserInputs()
+        If ValidateUserInputs() Then
+            'add record
+            inventoryItems.Add($"{"12345"}, {DescriptionTextBox.Text}, {PartNumberTextBox.Text}, {LocationTextBox.Text}, {VendorTextBox.Text}, {ManufactureTextBox.Text}, {DataSheetTextBox.Text}")
+            'TODO add record to file
+            'backup file first use of the day
+            'mark with new file or temp file
+        End If
     End Sub
 End Class

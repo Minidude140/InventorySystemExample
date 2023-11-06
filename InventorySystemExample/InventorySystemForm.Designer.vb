@@ -26,16 +26,16 @@ Partial Class InventorySystemForm
         Me.RecordInfoGroupBox = New System.Windows.Forms.GroupBox()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
-        Me.DataSheetLabel = New System.Windows.Forms.Label()
-        Me.ManufactureLabel = New System.Windows.Forms.Label()
-        Me.ManufactureTextBox = New System.Windows.Forms.TextBox()
-        Me.DataSheetTextBox = New System.Windows.Forms.TextBox()
-        Me.VenderLabel = New System.Windows.Forms.Label()
-        Me.LocationLabel = New System.Windows.Forms.Label()
         Me.PartNumberLabel = New System.Windows.Forms.Label()
         Me.PartNumberTextBox = New System.Windows.Forms.TextBox()
+        Me.LocationLabel = New System.Windows.Forms.Label()
         Me.LocationTextBox = New System.Windows.Forms.TextBox()
+        Me.VenderLabel = New System.Windows.Forms.Label()
         Me.VendorTextBox = New System.Windows.Forms.TextBox()
+        Me.ManufactureLabel = New System.Windows.Forms.Label()
+        Me.ManufactureTextBox = New System.Windows.Forms.TextBox()
+        Me.DataSheetLabel = New System.Windows.Forms.Label()
+        Me.DataSheetTextBox = New System.Windows.Forms.TextBox()
         Me.OptionsGroupBox = New System.Windows.Forms.GroupBox()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
@@ -49,6 +49,7 @@ Partial Class InventorySystemForm
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.RecordInfoGroupBox.SuspendLayout()
         Me.OptionsGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
@@ -75,14 +76,69 @@ Partial Class InventorySystemForm
         Me.RecordInfoGroupBox.TabStop = False
         Me.RecordInfoGroupBox.Text = "Record Info"
         '
-        'DataSheetLabel
+        'DescriptionLabel
         '
-        Me.DataSheetLabel.AutoSize = True
-        Me.DataSheetLabel.Location = New System.Drawing.Point(9, 172)
-        Me.DataSheetLabel.Name = "DataSheetLabel"
-        Me.DataSheetLabel.Size = New System.Drawing.Size(75, 17)
-        Me.DataSheetLabel.TabIndex = 11
-        Me.DataSheetLabel.Text = "DataSheet"
+        Me.DescriptionLabel.AutoSize = True
+        Me.DescriptionLabel.Location = New System.Drawing.Point(9, 25)
+        Me.DescriptionLabel.Name = "DescriptionLabel"
+        Me.DescriptionLabel.Size = New System.Drawing.Size(79, 17)
+        Me.DescriptionLabel.TabIndex = 4
+        Me.DescriptionLabel.Text = "Description"
+        '
+        'DescriptionTextBox
+        '
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(95, 25)
+        Me.DescriptionTextBox.Name = "DescriptionTextBox"
+        Me.DescriptionTextBox.Size = New System.Drawing.Size(213, 22)
+        Me.DescriptionTextBox.TabIndex = 0
+        '
+        'PartNumberLabel
+        '
+        Me.PartNumberLabel.AutoSize = True
+        Me.PartNumberLabel.Location = New System.Drawing.Point(27, 56)
+        Me.PartNumberLabel.Name = "PartNumberLabel"
+        Me.PartNumberLabel.Size = New System.Drawing.Size(46, 17)
+        Me.PartNumberLabel.TabIndex = 5
+        Me.PartNumberLabel.Text = "Part #"
+        '
+        'PartNumberTextBox
+        '
+        Me.PartNumberTextBox.Location = New System.Drawing.Point(95, 53)
+        Me.PartNumberTextBox.Name = "PartNumberTextBox"
+        Me.PartNumberTextBox.Size = New System.Drawing.Size(213, 22)
+        Me.PartNumberTextBox.TabIndex = 1
+        '
+        'LocationLabel
+        '
+        Me.LocationLabel.AutoSize = True
+        Me.LocationLabel.Location = New System.Drawing.Point(19, 86)
+        Me.LocationLabel.Name = "LocationLabel"
+        Me.LocationLabel.Size = New System.Drawing.Size(62, 17)
+        Me.LocationLabel.TabIndex = 6
+        Me.LocationLabel.Text = "Location"
+        '
+        'LocationTextBox
+        '
+        Me.LocationTextBox.Location = New System.Drawing.Point(95, 81)
+        Me.LocationTextBox.Name = "LocationTextBox"
+        Me.LocationTextBox.Size = New System.Drawing.Size(213, 22)
+        Me.LocationTextBox.TabIndex = 2
+        '
+        'VenderLabel
+        '
+        Me.VenderLabel.AutoSize = True
+        Me.VenderLabel.Location = New System.Drawing.Point(19, 114)
+        Me.VenderLabel.Name = "VenderLabel"
+        Me.VenderLabel.Size = New System.Drawing.Size(54, 17)
+        Me.VenderLabel.TabIndex = 7
+        Me.VenderLabel.Text = "Vendor"
+        '
+        'VendorTextBox
+        '
+        Me.VendorTextBox.Location = New System.Drawing.Point(95, 109)
+        Me.VendorTextBox.Name = "VendorTextBox"
+        Me.VendorTextBox.Size = New System.Drawing.Size(213, 22)
+        Me.VendorTextBox.TabIndex = 3
         '
         'ManufactureLabel
         '
@@ -100,76 +156,21 @@ Partial Class InventorySystemForm
         Me.ManufactureTextBox.Size = New System.Drawing.Size(213, 22)
         Me.ManufactureTextBox.TabIndex = 4
         '
+        'DataSheetLabel
+        '
+        Me.DataSheetLabel.AutoSize = True
+        Me.DataSheetLabel.Location = New System.Drawing.Point(9, 172)
+        Me.DataSheetLabel.Name = "DataSheetLabel"
+        Me.DataSheetLabel.Size = New System.Drawing.Size(75, 17)
+        Me.DataSheetLabel.TabIndex = 11
+        Me.DataSheetLabel.Text = "DataSheet"
+        '
         'DataSheetTextBox
         '
         Me.DataSheetTextBox.Location = New System.Drawing.Point(95, 167)
         Me.DataSheetTextBox.Name = "DataSheetTextBox"
         Me.DataSheetTextBox.Size = New System.Drawing.Size(213, 22)
         Me.DataSheetTextBox.TabIndex = 5
-        '
-        'VenderLabel
-        '
-        Me.VenderLabel.AutoSize = True
-        Me.VenderLabel.Location = New System.Drawing.Point(19, 114)
-        Me.VenderLabel.Name = "VenderLabel"
-        Me.VenderLabel.Size = New System.Drawing.Size(54, 17)
-        Me.VenderLabel.TabIndex = 7
-        Me.VenderLabel.Text = "Vendor"
-        '
-        'LocationLabel
-        '
-        Me.LocationLabel.AutoSize = True
-        Me.LocationLabel.Location = New System.Drawing.Point(19, 86)
-        Me.LocationLabel.Name = "LocationLabel"
-        Me.LocationLabel.Size = New System.Drawing.Size(62, 17)
-        Me.LocationLabel.TabIndex = 6
-        Me.LocationLabel.Text = "Location"
-        '
-        'PartNumberLabel
-        '
-        Me.PartNumberLabel.AutoSize = True
-        Me.PartNumberLabel.Location = New System.Drawing.Point(27, 56)
-        Me.PartNumberLabel.Name = "PartNumberLabel"
-        Me.PartNumberLabel.Size = New System.Drawing.Size(46, 17)
-        Me.PartNumberLabel.TabIndex = 5
-        Me.PartNumberLabel.Text = "Part #"
-        '
-        'DescriptionLabel
-        '
-        Me.DescriptionLabel.AutoSize = True
-        Me.DescriptionLabel.Location = New System.Drawing.Point(9, 25)
-        Me.DescriptionLabel.Name = "DescriptionLabel"
-        Me.DescriptionLabel.Size = New System.Drawing.Size(79, 17)
-        Me.DescriptionLabel.TabIndex = 4
-        Me.DescriptionLabel.Text = "Description"
-        '
-        'PartNumberTextBox
-        '
-        Me.PartNumberTextBox.Location = New System.Drawing.Point(95, 53)
-        Me.PartNumberTextBox.Name = "PartNumberTextBox"
-        Me.PartNumberTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.PartNumberTextBox.TabIndex = 1
-        '
-        'LocationTextBox
-        '
-        Me.LocationTextBox.Location = New System.Drawing.Point(95, 81)
-        Me.LocationTextBox.Name = "LocationTextBox"
-        Me.LocationTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.LocationTextBox.TabIndex = 2
-        '
-        'VendorTextBox
-        '
-        Me.VendorTextBox.Location = New System.Drawing.Point(95, 109)
-        Me.VendorTextBox.Name = "VendorTextBox"
-        Me.VendorTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.VendorTextBox.TabIndex = 3
-        '
-        'DescriptionTextBox
-        '
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(95, 25)
-        Me.DescriptionTextBox.Name = "DescriptionTextBox"
-        Me.DescriptionTextBox.Size = New System.Drawing.Size(213, 22)
-        Me.DescriptionTextBox.TabIndex = 0
         '
         'OptionsGroupBox
         '
@@ -341,4 +342,5 @@ Partial Class InventorySystemForm
     Friend WithEvents ExitButton As Button
     Friend WithEvents MainToolTip As ToolTip
     Friend WithEvents OpenFileDialog As OpenFileDialog
+    Friend WithEvents SaveFileDialog As SaveFileDialog
 End Class
