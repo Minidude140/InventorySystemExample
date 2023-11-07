@@ -12,10 +12,16 @@ Public Class InventorySystemForm
     Private fileName As String = "..\..\partsInventory.txt"
 
     'Custom Methods
+    ''' <summary>
+    ''' Sets up the default values
+    ''' </summary>
     Sub SetDefaults()
 
     End Sub
 
+    ''' <summary>
+    ''' Loads the parts inventory file. If file is not present dialog box opens
+    ''' </summary>
     Private Sub LoadInventoryFile()
         'Dim fileName As String = "..\..\partsInventory.txt"
         Dim fileNumber As Integer = FreeFile()
@@ -68,9 +74,29 @@ Public Class InventorySystemForm
             End If
         Next
 
-        'MsgBox(errrorMessage)
+        MsgBox(errrorMessage)
         Return isValid
     End Function
+
+    Sub AppendRecordToFile(newRecord As String, fileName As String)
+        Dim fileNumber As Integer = FreeFile()
+        Dim temp() As String
+        temp = Split(newRecord, ",")
+
+        'AppendRecordToFile(vbCrLf, "..\..\temp.txt")
+        Try
+            FileOpen(fileNumber, fileName, OpenMode.Append)
+            'iterate through the record array
+            'Append each field to the file
+            For Each field In temp
+                Write(fileNumber, field)
+            Next
+            WriteLine(fileNumber)
+            FileClose(fileNumber)
+        Catch ex As Exception
+            MsgBox("In file append Got: " & vbCrLf & ex.Message)
+        End Try
+    End Sub
 
 
     'Event Handlers
@@ -90,6 +116,7 @@ Public Class InventorySystemForm
             'TODO add record to file
             'backup file first use of the day
             'mark with new file or temp file
+            AppendRecordToFile(inventoryItems.Last, "..\..\temp.txt")
         End If
     End Sub
 End Class
