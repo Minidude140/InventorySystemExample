@@ -378,7 +378,7 @@ Partial Class InventorySystemForm
         'AboutTopMenuItem
         '
         Me.AboutTopMenuItem.Name = "AboutTopMenuItem"
-        Me.AboutTopMenuItem.Size = New System.Drawing.Size(133, 26)
+        Me.AboutTopMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.AboutTopMenuItem.Text = "&About"
         '
         'InventorySystemForm
