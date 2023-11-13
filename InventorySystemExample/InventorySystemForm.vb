@@ -77,7 +77,9 @@ Public Class InventorySystemForm
             End If
         Next
 
-        MsgBox(errrorMessage)
+        If errormessage <> "" Then
+            MsgBox(errrorMessage)
+        End If
         Return isValid
     End Function
 
@@ -109,11 +111,11 @@ Public Class InventorySystemForm
         SetDefaults()
     End Sub
 
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click, ExitTopMenuItem.Click
         Me.Close()
     End Sub
 
-    Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click, UpdateTopMenuItem.Click, UpdateContextMenuItem.Click
         If ValidateUserInputs() Then
             Dim temp() As String = {54321, DescriptionTextBox.Text, PartNumberTextBox.Text, LocationTextBox.Text, VendorTextBox.Text, ManufactureTextBox.Text, DataSheetTextBox.Text}
             inventoryItems.Add(temp)
@@ -124,5 +126,9 @@ Public Class InventorySystemForm
             'mark with new file or temp file
             AppendRecordToFile(inventoryItems.Last, "..\..\temp.txt")
         End If
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click, ClearTopMenuItem.Click, ClearContextMenuItem.Click
+        SetDefaults()
     End Sub
 End Class

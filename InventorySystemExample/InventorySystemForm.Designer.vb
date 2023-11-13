@@ -24,6 +24,9 @@ Partial Class InventorySystemForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.RecordInfoGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.UpdateContextMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearContextMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
         Me.PartNumberLabel = New System.Windows.Forms.Label()
@@ -50,13 +53,24 @@ Partial Class InventorySystemForm
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.TopMenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecordInfoGroupBox.SuspendLayout()
+        Me.ContextMenuStrip.SuspendLayout()
         Me.OptionsGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
+        Me.TopMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'RecordInfoGroupBox
         '
+        Me.RecordInfoGroupBox.ContextMenuStrip = Me.ContextMenuStrip
         Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionLabel)
         Me.RecordInfoGroupBox.Controls.Add(Me.DescriptionTextBox)
         Me.RecordInfoGroupBox.Controls.Add(Me.PartNumberLabel)
@@ -69,12 +83,31 @@ Partial Class InventorySystemForm
         Me.RecordInfoGroupBox.Controls.Add(Me.ManufactureTextBox)
         Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetLabel)
         Me.RecordInfoGroupBox.Controls.Add(Me.DataSheetTextBox)
-        Me.RecordInfoGroupBox.Location = New System.Drawing.Point(88, 53)
+        Me.RecordInfoGroupBox.Location = New System.Drawing.Point(88, 46)
         Me.RecordInfoGroupBox.Name = "RecordInfoGroupBox"
         Me.RecordInfoGroupBox.Size = New System.Drawing.Size(319, 254)
         Me.RecordInfoGroupBox.TabIndex = 0
         Me.RecordInfoGroupBox.TabStop = False
         Me.RecordInfoGroupBox.Text = "Record Info"
+        '
+        'ContextMenuStrip
+        '
+        Me.ContextMenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateContextMenuItem, Me.ClearContextMenuItem})
+        Me.ContextMenuStrip.Name = "ContextMenuStrip"
+        Me.ContextMenuStrip.Size = New System.Drawing.Size(128, 52)
+        '
+        'UpdateContextMenuItem
+        '
+        Me.UpdateContextMenuItem.Name = "UpdateContextMenuItem"
+        Me.UpdateContextMenuItem.Size = New System.Drawing.Size(127, 24)
+        Me.UpdateContextMenuItem.Text = "&Update"
+        '
+        'ClearContextMenuItem
+        '
+        Me.ClearContextMenuItem.Name = "ClearContextMenuItem"
+        Me.ClearContextMenuItem.Size = New System.Drawing.Size(127, 24)
+        Me.ClearContextMenuItem.Text = "&Clear"
         '
         'DescriptionLabel
         '
@@ -294,6 +327,60 @@ Partial Class InventorySystemForm
         '
         Me.OpenFileDialog.FileName = "OpenFileDialog1"
         '
+        'TopMenuStrip
+        '
+        Me.TopMenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.TopMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.TopMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.TopMenuStrip.Name = "TopMenuStrip"
+        Me.TopMenuStrip.Size = New System.Drawing.Size(800, 28)
+        Me.TopMenuStrip.TabIndex = 3
+        Me.TopMenuStrip.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateTopMenuItem, Me.ClearTopMenuItem, Me.ExitTopMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.FileToolStripMenuItem.Text = "&File"
+        '
+        'UpdateTopMenuItem
+        '
+        Me.UpdateTopMenuItem.Name = "UpdateTopMenuItem"
+        Me.UpdateTopMenuItem.Size = New System.Drawing.Size(141, 26)
+        Me.UpdateTopMenuItem.Text = "&Update"
+        '
+        'ClearTopMenuItem
+        '
+        Me.ClearTopMenuItem.Name = "ClearTopMenuItem"
+        Me.ClearTopMenuItem.Size = New System.Drawing.Size(141, 26)
+        Me.ClearTopMenuItem.Text = "&Clear"
+        '
+        'ExitTopMenuItem
+        '
+        Me.ExitTopMenuItem.Name = "ExitTopMenuItem"
+        Me.ExitTopMenuItem.Size = New System.Drawing.Size(141, 26)
+        Me.ExitTopMenuItem.Text = "&Exit"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
+        Me.EditToolStripMenuItem.Text = "&Edit"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutTopMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
+        Me.HelpToolStripMenuItem.Text = "&Help"
+        '
+        'AboutTopMenuItem
+        '
+        Me.AboutTopMenuItem.Name = "AboutTopMenuItem"
+        Me.AboutTopMenuItem.Size = New System.Drawing.Size(133, 26)
+        Me.AboutTopMenuItem.Text = "&About"
+        '
         'InventorySystemForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -302,17 +389,23 @@ Partial Class InventorySystemForm
         Me.Controls.Add(Me.RecordInfoGroupBox)
         Me.Controls.Add(Me.OptionsGroupBox)
         Me.Controls.Add(Me.ButtonGroupBox)
+        Me.Controls.Add(Me.TopMenuStrip)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MainMenuStrip = Me.TopMenuStrip
         Me.Name = "InventorySystemForm"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventory Manager"
         Me.RecordInfoGroupBox.ResumeLayout(False)
         Me.RecordInfoGroupBox.PerformLayout()
+        Me.ContextMenuStrip.ResumeLayout(False)
         Me.OptionsGroupBox.ResumeLayout(False)
         Me.OptionsGroupBox.PerformLayout()
         Me.ButtonGroupBox.ResumeLayout(False)
+        Me.TopMenuStrip.ResumeLayout(False)
+        Me.TopMenuStrip.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -343,4 +436,15 @@ Partial Class InventorySystemForm
     Friend WithEvents MainToolTip As ToolTip
     Friend WithEvents OpenFileDialog As OpenFileDialog
     Friend WithEvents SaveFileDialog As SaveFileDialog
+    Friend WithEvents TopMenuStrip As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdateTopMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearTopMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitTopMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutTopMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip As ContextMenuStrip
+    Friend WithEvents UpdateContextMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearContextMenuItem As ToolStripMenuItem
 End Class
